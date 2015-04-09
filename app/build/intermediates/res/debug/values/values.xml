@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/User/Desktop/WeatherApp1/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/Users/User/Desktop/WeatherApp1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">WeatherApp</string>
+    <string name="hello_world">Hello world!</string>
+    <!-- From: file:/C:/Users/User/Desktop/WeatherApp1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="tempMax" parent="@android:style/TextAppearance.Medium">	    
+	    <item name="android:textColor">#FF0000</item>	   	   	    
+   </style>
+    <style name="tempMin" parent="@android:style/TextAppearance.Medium">	    
+	    <item name="android:textColor">#0000FF</item>	   	   	    
+   </style>
+    <style name="tempStyle" parent="@android:style/TextAppearance.Large">	    
+	    <item name="android:textColor">#2E9AFE</item>	   	   
+	    <item name="android:textStyle">bold</item>	   
+	</style>
+    <style name="valData" parent="@android:style/TextAppearance.Medium">	    
+	    <item name="android:textColor">#74DF00</item>	
+	    <item name="android:textStyle">bold</item>   	   	    
+   </style>
+</resources>
