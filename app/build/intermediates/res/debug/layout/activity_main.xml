@@ -23,7 +23,7 @@
         android:id="@+id/condIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cityText"
+        android:layout_below="@+id/temp"
          />
 
     <TextView
@@ -31,7 +31,7 @@
         android:text=" "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cityText"
+        android:layout_below="@+id/temp"
         />
 
     <TextView
@@ -56,23 +56,27 @@
         android:shadowColor="#FFFFFF"
         android:layout_toStartOf="@+id/cityText"
         style="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/cityText"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/pressLab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pressure"
+        android:text="Humidity"
         android:textColor="#000000"
         android:shadowColor="#FFFFFF"
-        android:layout_below="@+id/temp"
-        android:layout_alignRight="@+id/humLab"
-        android:layout_alignEnd="@+id/humLab"
-        android:layout_marginTop="78dp"
-        style="?android:attr/textAppearanceLarge"/>
+        android:layout_marginTop="57dp"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/condDescr"
+        android:layout_alignRight="@+id/press"
+        android:layout_alignEnd="@+id/press"
+        android:layout_alignParentLeft="true"/>
 
     <TextView
-        android:id="@+id/press"
+        android:id="@+id/hum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/pressLab"
@@ -81,32 +85,35 @@
         android:shadowColor="#FFFFFF"
         style="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
+        android:layout_alignParentEnd="true"
         />
 
     <TextView
         android:id="@+id/humLab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Humidity"
+        android:text="Pressure"
         android:textColor="#000000"
         android:shadowColor="#FFFFFF"
         android:layout_marginTop="35dp"
         android:layout_below="@+id/pressLab"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        style="?android:attr/textAppearanceLarge"/>
+        style="?android:attr/textAppearanceLarge"
+        />
 
     <TextView
-        android:id="@+id/hum"
+        android:id="@+id/press"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/humLab"
-        android:layout_toRightOf="@id/humLab" 
+        android:layout_toRightOf="@id/humLab"
         android:layout_marginLeft="4dp"
         android:textColor="#000000"
         android:shadowColor="#FFFFFF"
         style="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
+        android:layout_alignParentEnd="true"
         />
 
     <TextView
@@ -120,6 +127,7 @@
         android:layout_below="@+id/humLab"
         android:layout_alignRight="@+id/humLab"
         android:layout_alignEnd="@+id/humLab"
+        android:layout_alignParentLeft="true"
         style="?android:attr/textAppearanceLarge"/>
 
     <TextView
@@ -133,6 +141,7 @@
         android:shadowColor="#FFFFFF"
         style="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
+        android:layout_alignParentEnd="true"
         />
 
 </RelativeLayout><!-- From: file:/C:/Users/User/Desktop/WeatherApp1/app/src/main/res/layout/activity_main.xml -->

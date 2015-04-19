@@ -22,16 +22,16 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f08000d;
         public static final int cityText=0x7f080000;
-        public static final int condDescr=0x7f080003;
+        public static final int condDescr=0x7f080004;
         public static final int condIcon=0x7f080001;
-        public static final int hum=0x7f080008;
-        public static final int humLab=0x7f080006;
+        public static final int hum=0x7f080007;
+        public static final int humLab=0x7f080008;
         public static final int pager=0x7f08000b;
-        public static final int press=0x7f080007;
+        public static final int press=0x7f080006;
         public static final int pressLab=0x7f080005;
         public static final int section_label=0x7f08000c;
-        public static final int temp=0x7f080004;
-        public static final int windDeg=0x7f080002;
+        public static final int temp=0x7f080002;
+        public static final int windDeg=0x7f080003;
         public static final int windLab=0x7f080009;
         public static final int windSpeed=0x7f08000a;
     }
