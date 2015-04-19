@@ -59,6 +59,10 @@ public class MainActivity extends Activity {
 		windSpeed = (TextView) findViewById(R.id.windSpeed);
 		windDeg = (TextView) findViewById(R.id.windDeg);
 		imgView = (ImageView) findViewById(R.id.condIcon);
+
+        imgView.getLayoutParams().height = 150;
+        imgView.getLayoutParams().width = 150;
+        imgView.requestLayout();
 		
 		JSONWeatherTask task = new JSONWeatherTask();
 		task.execute(new String[]{city});
@@ -83,7 +87,7 @@ public class MainActivity extends Activity {
 				weather = JSONWeatherParser.getWeather(data);
 				
 				// Let's retrieve the icon
-				weather.iconData = ( (new WeatherHttpClient()).getImage(weather.currentCondition.getIcon()));
+				weather.iconData = new WeatherHttpClient().getImage(weather.currentCondition.getIcon()+".png");
 				
 			} catch (JSONException e) {				
 				e.printStackTrace();

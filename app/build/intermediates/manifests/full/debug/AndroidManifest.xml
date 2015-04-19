@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-
+    xmlns:tools="http://schemas.android.com/tools"
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -23,6 +23,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.survivingwithandroid.weatherapp.MainActivity2Activity"
+            android:label="@string/title_activity_main_activity2" >
         </activity>
     </application>
 
