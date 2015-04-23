@@ -1,12 +1,17 @@
 package com.survivingwithandroid.weatherapp;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.survivingwithandroid.weatherapp.model.Weather;
@@ -49,7 +54,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		String city = "Norman,US";
+		String city = "Norman,US"; //have to change this for testing
 		
 		cityText = (TextView) findViewById(R.id.cityText);
 		condDescr = (TextView) findViewById(R.id.condDescr);
@@ -77,54 +82,78 @@ public class MainActivity extends Activity {
 
 	
 	private class JSONWeatherTask extends AsyncTask<String, Void, Weather> {
-		
-		@Override
-		protected Weather doInBackground(String... params) {
-			Weather weather = new Weather();
-			String data = ( (new WeatherHttpClient()).getWeatherData(params[0]));
 
-			try {
-				weather = JSONWeatherParser.getWeather(data);
-				
-				// Let's retrieve the icon
-				weather.iconData = new WeatherHttpClient().getImage(weather.currentCondition.getIcon()+".png");
-				
-			} catch (JSONException e) {				
-				e.printStackTrace();
-			}
-			return weather;
-		
-	}
-		
-		
-		
-		
-	@Override
-		protected void onPostExecute(Weather weather) {			
-			super.onPostExecute(weather);
+        @Override
+        protected Weather doInBackground(String... params) {
+            Weather weather = new Weather();
+            String data = ((new WeatherHttpClient()).getWeatherData(params[0]));
+
+            try {
+                weather = JSONWeatherParser.getWeather(data);
+
+                // Let's retrieve the icon
+                weather.iconData = new WeatherHttpClient().getImage(weather.currentCondition.getIcon() + ".png");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return weather;
+
+        }
+
+
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+        @Override
+        protected void onPostExecute(Weather weather) {
+            super.onPostExecute(weather);
 
             if (weather.iconData != null && weather.iconData.length > 0) {
-				Bitmap img = BitmapFactory.decodeByteArray(weather.iconData, 0, weather.iconData.length); 
-				imgView.setImageBitmap(img);
-			}
+                Bitmap img = BitmapFactory.decodeByteArray(weather.iconData, 0, weather.iconData.length);
+                imgView.setImageBitmap(img);
+            }
 
             //test condIcon: android:background="@drawable/cloudicon2"
-			
-			cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
-			condDescr.setText(weather.currentCondition.getCondition());
-			temp.setText("\n" + (Math.round(((weather.temperature.getTemp()-273.15)*(9))/5)+32) + " degrees F" + "\n");
+
+            cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
+            condDescr.setText(weather.currentCondition.getCondition());
+            temp.setText("\n" + (Math.round(((weather.temperature.getTemp() - 273.15) * (9)) / 5) + 32) + " degrees F" + "\n");
             hum.setText("\n" + weather.currentCondition.getHumidity() + "%");
-			press.setText("\n" + weather.currentCondition.getPressure() + " hPa");
-			windSpeed.setText("\n" + weather.wind.getSpeed() + " mps");
-			windDeg.setText(" " + weather.currentCondition.getDescr() + "\n");
-				
-		}
+            press.setText("\n" + weather.currentCondition.getPressure() + " hPa");
+            windSpeed.setText("\n" + weather.wind.getSpeed() + " mps");
+            windDeg.setText(" " + weather.currentCondition.getDescr() + "\n");
 
+            RelativeLayout rLayout = (RelativeLayout) findViewById(R.id.relLayout);
+            Resources res = getResources();
 
+            //Default background is few clouds or scattered clouds
 
+            if (condDescr.getText().equals("Clear Sky") || condDescr.getText().equals("Clear sky")) {
+                Drawable clearsky = res.getDrawable(R.drawable.clearsky);
+                rLayout.setBackground(clearsky);
+            }
 
+            if (condDescr.getText().equals("Rain") || condDescr.getText().equals("Shower Rain") || condDescr.getText().equals("Shower rain") || condDescr.getText().equals("Thunderstorm")) {
+               Drawable rain = res.getDrawable(R.drawable.rain2);
+               rLayout.setBackground(rain);
+            }
 
+            if (condDescr.getText().equals("Broken Clouds") || condDescr.getText().equals("Broken clouds"))
+            {
+                Drawable brokenclouds = res.getDrawable(R.drawable.brokenclouds);
+                rLayout.setBackground(brokenclouds);
+            }
 
-	
-  }
+            if (condDescr.getText().equals("Mist")) {
+                Drawable mist = res.getDrawable(R.drawable.mist);
+                rLayout.setBackground(mist);
+            }
+
+            if (condDescr.getText().equals("Snow")) {
+                Drawable snow = res.getDrawable(R.drawable.snow);
+                rLayout.setBackground(snow);
+            }
+
+        }
+    }
 }
+
