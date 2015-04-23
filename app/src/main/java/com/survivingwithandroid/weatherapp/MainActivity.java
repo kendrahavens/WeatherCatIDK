@@ -111,12 +111,12 @@ public class MainActivity extends Activity {
             //test condIcon: android:background="@drawable/cloudicon2"
 			
 			cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
-			condDescr.setText(weather.currentCondition.getCondition());// + "(" + weather.currentCondition.getDescr() + ")");
+			condDescr.setText(weather.currentCondition.getCondition());
 			temp.setText("\n" + (Math.round(((weather.temperature.getTemp()-273.15)*(9))/5)+32) + " degrees F" + "\n");
             hum.setText("\n" + weather.currentCondition.getHumidity() + "%");
 			press.setText("\n" + weather.currentCondition.getPressure() + " hPa");
-			windSpeed.setText("" + weather.wind.getSpeed() + " mps");
-			//windDeg.setText("" + weather.wind.getDeg() + "degrees");
+			windSpeed.setText("\n" + weather.wind.getSpeed() + " mps");
+			windDeg.setText(" " + weather.currentCondition.getDescr() + "\n");
 				
 		}
 

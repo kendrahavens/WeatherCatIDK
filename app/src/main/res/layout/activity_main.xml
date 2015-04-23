@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/cloudy"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:title="WeatherCat">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
                 android:id="@+id/windLab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wind\n"
+                android:text="\nWind\n"
                 android:textColor="#000000"
                 android:shadowColor="#FFFFFF"
                 style="?android:attr/textAppearanceLarge"
@@ -153,6 +154,19 @@
         android:layout_alignEnd="@+id/windSpeed"
         android:layout_alignLeft="@+id/temp"
         android:layout_alignStart="@+id/temp" />
+
+    <TextView
+        android:id="@+id/windDeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:shadowColor="#FFFFFF"
+        android:text="ConditionDes"
+        style="?android:attr/textAppearanceLarge"
+        android:textStyle="italic"
+        android:layout_below="@+id/temp"
+        android:layout_toRightOf="@+id/condDescr"
+        android:layout_toEndOf="@+id/condDescr" />
 
     <TextView
         android:id="@+id/temp"
