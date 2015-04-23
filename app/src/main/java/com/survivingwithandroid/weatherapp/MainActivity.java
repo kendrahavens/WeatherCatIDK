@@ -102,17 +102,19 @@ public class MainActivity extends Activity {
 	@Override
 		protected void onPostExecute(Weather weather) {			
 			super.onPostExecute(weather);
-			
-			if (weather.iconData != null && weather.iconData.length > 0) {
+
+            if (weather.iconData != null && weather.iconData.length > 0) {
 				Bitmap img = BitmapFactory.decodeByteArray(weather.iconData, 0, weather.iconData.length); 
 				imgView.setImageBitmap(img);
 			}
+
+            //test condIcon: android:background="@drawable/cloudicon2"
 			
 			cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
 			condDescr.setText(weather.currentCondition.getCondition());// + "(" + weather.currentCondition.getDescr() + ")");
-			temp.setText("\n" + (Math.round(((weather.temperature.getTemp()-273.15)*(9))/5)+32) + " degrees F" + "     \n");
-			hum.setText("" + weather.currentCondition.getHumidity() + "%");
-			press.setText(" " + weather.currentCondition.getPressure() + " hPa");
+			temp.setText("\n" + (Math.round(((weather.temperature.getTemp()-273.15)*(9))/5)+32) + " degrees F" + "\n");
+            hum.setText("\n" + weather.currentCondition.getHumidity() + "%");
+			press.setText("\n" + weather.currentCondition.getPressure() + " hPa");
 			windSpeed.setText("" + weather.wind.getSpeed() + " mps");
 			//windDeg.setText("" + weather.wind.getDeg() + "degrees");
 				
