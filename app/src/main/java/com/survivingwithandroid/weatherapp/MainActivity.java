@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
 
             //Default background is few clouds or scattered clouds
 
-            if (condDescr.getText().equals("Clear Sky") || condDescr.getText().equals("Clear sky")) {
+            if (condDescr.getText().equals("Clear")) {
                 Drawable clearsky = res.getDrawable(R.drawable.clearsky);
                 rLayout.setBackground(clearsky);
             }
@@ -133,7 +133,7 @@ public class MainActivity extends Activity {
                rLayout.setBackground(rain);
             }
 
-            if (windDeg.getText().equals(" broken clouds\n"))
+            if (windDeg.getText().equals(" broken clouds\n") || windDeg.getText().equals(" overcast clouds\n"))
             {
                 Drawable brokenclouds = res.getDrawable(R.drawable.brokenclouds);
                 rLayout.setBackground(brokenclouds);
