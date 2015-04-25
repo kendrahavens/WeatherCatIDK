@@ -18,38 +18,29 @@ import com.survivingwithandroid.weatherapp.model.Weather;
 
 import org.json.JSONException;
 
-//I'm pushing this to the repository, FOOLS
-
-/*
- * Copyright (C) 2013 Surviving with Android (http://www.survivingwithandroid.com)
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+//SOURCES USED:
+//Current weather data model and parser: survivingwithandriod.com weather app tutorial
+//Retrieving current weather data from: openweathermap.com
+//Pictures:
+    //brokenclouds: http://www-das.uwyo.edu/~geerts/cwx/notes/chap08/stratiform.html
+    //clearsky: http://lazybonesstudios.deviantart.com/art/LBS-STOCK-CLEAR-SKY-005-164996349
+    //cloudysky: http://engineering.missouri.edu/2011/02/taking-on-challenges-growing-from-the-experience/australian-cloudy-sky/
+    //mist: http://www.creativemac.com/article/Download:-Photoshop-Brushes-Series-42-48530
+    //rain: http://www.newsms.fm/rain-and-cold-today/
+    //snow: http://wiki.fis-ski.com/index.php/Snow_and_Course_Preparation
+    //kitty heart icon: http://asayuri.deviantart.com/art/Cat-transparent-small-icon-OuO-376856270
 
 public class MainActivity extends Activity {
 
-	
 	private TextView cityText;
 	private TextView condDescr;
 	private TextView temp;
 	private TextView press;
 	private TextView windSpeed;
 	private TextView windDeg;
-	
 	private TextView hum;
 	private ImageView imgView;
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -114,7 +105,7 @@ public class MainActivity extends Activity {
 
             //test condIcon: android:background="@drawable/cloudicon2"
 
-            cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
+            cityText.setText(weather.location.getCity() + ", " + weather.location.getCountry());
             condDescr.setText(weather.currentCondition.getCondition());
             temp.setText("\n" + (Math.round(((weather.temperature.getTemp() - 273.15) * (9)) / 5) + 32) + " degrees F" + "\n");
             hum.setText("\n" + weather.currentCondition.getHumidity() + "%");
@@ -124,6 +115,11 @@ public class MainActivity extends Activity {
 
             RelativeLayout rLayout = (RelativeLayout) findViewById(R.id.relLayout);
             Resources res = getResources();
+
+            if(windDeg.getText().equals(" Sky is Clear\n"))
+            {
+                windDeg.setText(" Spotless Skies\n");
+            }
 
             //Default background is few clouds or scattered clouds
 
@@ -137,7 +133,7 @@ public class MainActivity extends Activity {
                rLayout.setBackground(rain);
             }
 
-            if (condDescr.getText().equals("Broken Clouds") || condDescr.getText().equals("Broken clouds"))
+            if (windDeg.getText().equals(" broken clouds\n"))
             {
                 Drawable brokenclouds = res.getDrawable(R.drawable.brokenclouds);
                 rLayout.setBackground(brokenclouds);

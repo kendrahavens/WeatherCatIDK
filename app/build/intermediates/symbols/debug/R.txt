@@ -7,9 +7,10 @@ int drawable cloudicon2 0x7f020003
 int drawable cloudy 0x7f020004
 int drawable cloudy_sky 0x7f020005
 int drawable ic_launcher 0x7f020006
-int drawable mist 0x7f020007
-int drawable rain2 0x7f020008
-int drawable snow 0x7f020009
+int drawable kitty 0x7f020007
+int drawable mist 0x7f020008
+int drawable rain2 0x7f020009
+int drawable snow 0x7f02000a
 int id action_settings 0x7f080010
 int id cityText 0x7f080009
 int id condDescr 0x7f08000d
