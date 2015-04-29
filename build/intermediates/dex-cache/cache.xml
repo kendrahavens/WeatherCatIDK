@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0dcc55e70f7ebf7238fe2ec53f662eb378ab2668">
+        <dex dex="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-08d15821065fbb1ed10edda8561fbc923a7c78df.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
+        <dex dex="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\pre-dexed\debug\classes-3d6f8e564cadca0495457c9e9af646cc5a1f00c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-d8254165872bdb20979050a852aa57f6ed33641f.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\pre-dexed\debug\classes-d64ab309dd240d46d1a71cf36c7d081b988a2565.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\User\Desktop\WeatherApp1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-7b13cb0991e0635c1f9fe8dd240c7bf3e938d93e.jar" />
+    </item>
+
+</items>
